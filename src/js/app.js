@@ -7,7 +7,7 @@ routerApp.run(function($rootScope, $state, $stateParams){
 
 
 routerApp.config(function($stateProvider, $urlRouterProvider){
-	// $urlRouterProvider.otherwise("/contacts");
+	$urlRouterProvider.otherwise("/index/1");
 	$stateProvider.state('contacts', {
 		url: '/contacts',
 		views : 
@@ -29,5 +29,36 @@ routerApp.config(function($stateProvider, $urlRouterProvider){
 				}
 			}
 		},
+	});
+	$stateProvider.state('index', {
+		url : '/index/:id',
+		views : {
+			'header@' : 
+			{
+				templateUrl : "tpls/header.html",
+				controller : function($state, $stateParams)
+				{
+
+				}
+			},
+			'section@' :
+			{
+				template : "<div>section</div>",
+				controller : function($state, $stateParams)
+				{
+					console.info("invoke the section");
+					console.info($state);
+					console.info($stateParams);
+				}
+			},
+			'footer@' :
+			{
+				template : "<div>footer</div>",
+				controller : function($state, $stateParams)
+				{
+
+				}
+			}
+		}
 	});
 });

@@ -7,16 +7,9 @@
 	<script type="text/javascript" src="framework/angular-ui-router.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>
 </head>
-<body>
-	<section ui-view="contacts"></section>
-	<section ui-view="state"></section>
-	<ul>
-		<li>
-			<a ui-sref="contacts">Contacts</a>
-		</li>
-		<li ng-repeat="item in [1, 2, 3, 4, 5]">
-			<a href="#/state/{{item}}">State{{item}}</a>
-		</li>
-	</ul>	
+<body ui-view>
+	<header ui-view="header"></header>
+	<section ui-view="section"></section>
+	<footer ui-view="footer"></footer>
 </body>
 </html>
